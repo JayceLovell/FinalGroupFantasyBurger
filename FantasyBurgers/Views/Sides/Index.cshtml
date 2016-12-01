@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FantasyBurgers.Models.Side>
+
+@{
+    ViewBag.Title = "Sides";
+}
+
+<div style="margin-top: 165px;">
+    <h2>Sides</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SideName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SideShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SidePrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SideName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SideShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SidePrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.SideId }, new { @class = "btn btn-success btn-lg" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

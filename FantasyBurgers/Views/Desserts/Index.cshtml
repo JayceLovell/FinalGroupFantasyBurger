@@ -1,0 +1,54 @@
+﻿
+<!--
+    File Name: Index.cshtml
+    Authors: Sahil Mahajan
+             Waynell Lovell
+             Anmol Sharma
+    Website Name: fantasyburgers.azurewebsites.net
+    File Description: Main file of the Desserts Page
+ -->
+
+
+@model IEnumerable<FantasyBurgers.Models.Dessert>
+
+@{
+    ViewBag.Title = "Desserts";
+}
+
+<div style="margin-top: 165px;">
+    <h2>Desserts</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.DessertId }, new { @class = "btn btn-success btn-lg" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,80 @@
+﻿/*
+    File Name: Site.css
+    Authors: Sahil Mahajan
+             Waynell Lovell
+             Anmol Sharma
+    Website Name: fantasyburgers.azurewebsites.net
+    File Description: Custom Css file to do custom editing for the website.
+*/
+
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.navbar {
+   position:absolute;
+   background: rgba(128, 128, 128, 0.55);
+   border-color: transparent;
+   z-index:10;
+}
+.nav.navbar-nav li a,footer{
+    color: black;
+    font-weight: bold;
+    font-size:larger;
+}
+.carousel {
+    position: absolute;
+    top: 0px;
+    width:100%;
+}
+.nav ul li a{
+    text-decoration:none;
+    text-align: center;
+}
+.nav.navbar-nav li a:hover{
+    color:#000000;
+    font-weight: bold;
+    border-radius:100px;
+    background-image:url(Images/selectimage.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.nav.navbar-nav li a:focus{
+    color:white;
+    border-radius:100px;
+    background-image:url(Images/selectimage.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.body-content{
+    background-color:rgba(128, 128, 128, 0.45);
+    border:thin;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.dropdown-menu{
+    background: rgba(128, 128, 128, 0.55)
+}
+.detailsimages{
+    max-width:500px;
+    width:50%;
+}
+
+.carousel-indicators{
+    top:620px;
+}

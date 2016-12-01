@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<!--
+Authors: Sahil & Waynell Lovell
+    -->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Fantasy Burgers</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/flexslider.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.css" rel="stylesheet" />
+    <link href="~/Content/pricing.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/jquery.flexslider.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlsContainer: ".flexslider-container"
+            });
+        });
+    </script>
+</head>
+<body data-spy="scroll" data-target="#template-navbar">
+    <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home">
+                    <img id="logo" src="~/Content/Images/Icons/burger_sandwich.png" class="logo img-responsive">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Menu<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Appetizers", "Index", "Appetizers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Burgers", "Index", "Burgers")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Desserts", "Index", "Desserts")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Drinks", "Index", "Drinks")</li>
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Sides", "Index", "Sides")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.row -->
+    </nav>
+
+
+
+
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; @DateTime.Now.Year - Fantasy Burgers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/wow.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.hoverdir.js"></script>
+    <script type="text/javascript" src="~/Scripts/jQuery.scrollSpeed.js"></script>
+    <script type="text/javascript" src="~/Scripts/script.js"></script>
+</body>
+</html>

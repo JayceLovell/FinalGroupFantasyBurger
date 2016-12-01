@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FantasyBurgers.Models.Dessert>
+
+@{
+    ViewBag.Title = "Admin";
+}
+<div style="margin-top: 165px;">
+
+    <p>
+        @Html.ActionLink("Create New Dessert ", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DessertPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DessertPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DessertId }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DessertId }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DessertId }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
