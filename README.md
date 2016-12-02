@@ -3,5 +3,5 @@
 ## Contributors
 - Thiago Andrade
 - Eddie Song
-- Wainell Lovell
-- 
+- Waynell Lovell
+- Sahil Mahajann
