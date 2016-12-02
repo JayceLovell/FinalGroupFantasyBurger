@@ -8,29 +8,34 @@ namespace FantasyBurgers.Models
 
     public partial class Drink
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Drink()
+        {
+            Carts = new HashSet<Cart>();
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public int DrinkId { get; set; }
 
         [Column("Drink")]
         [Required]
-        [Display(Name = "Name")]
         public string Drink1 { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name ="Description")]
         public string DrinkShortDescription { get; set; }
 
-        [Display(Name ="Detailed Description")]
-        [ScaffoldColumn(false)]
         public string DrinkLongDescription { get; set; }
 
-        [Required]
         [Column(TypeName = "numeric")]
-        [Display(Name ="Price")]
         public decimal DrinkPrice { get; set; }
 
-        [Display(Name = "Display")]
-        [ScaffoldColumn(false)]
         public string DrinkImage { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
