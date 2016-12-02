@@ -173,7 +173,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppetizersController.cs" />
     <Compile Include="Controllers\BurgersController.cs" />
-    <Compile Include="Controllers\DessertsController.cs" />
     <Compile Include="Controllers\DrinksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -184,12 +183,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appetizer.cs" />
     <Compile Include="Models\Burger.cs" />
-    <Compile Include="Models\Dessert.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Drink.cs" />
-    <Compile Include="Models\FantasyBurgersContext.cs" />
+    <Compile Include="Models\FantasyBurgerFinal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Side.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Ordr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -361,8 +361,6 @@
     <Content Include="Views\Appetizers\Index.cshtml" />
     <Content Include="Views\Burgers\Details.cshtml" />
     <Content Include="Views\Burgers\Index.cshtml" />
-    <Content Include="Views\Desserts\Details.cshtml" />
-    <Content Include="Views\Desserts\Index.cshtml" />
     <Content Include="Views\Drinks\Details.cshtml" />
     <Content Include="Views\Drinks\Index.cshtml" />
     <Content Include="Views\Drinks\Admin.cshtml" />
@@ -377,10 +375,6 @@
     <Content Include="Views\Burgers\Edit.cshtml" />
     <Content Include="Views\Burgers\Admin.cshtml" />
     <Content Include="Views\Burgers\Delete.cshtml" />
-    <Content Include="Views\Desserts\Create.cshtml" />
-    <Content Include="Views\Desserts\Edit.cshtml" />
-    <Content Include="Views\Desserts\Delete.cshtml" />
-    <Content Include="Views\Desserts\Admin.cshtml" />
     <Content Include="Views\Sides\Create.cshtml" />
     <Content Include="Views\Sides\Delete.cshtml" />
     <Content Include="Views\Sides\Details.cshtml" />
