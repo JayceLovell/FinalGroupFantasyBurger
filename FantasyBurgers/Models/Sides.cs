@@ -6,47 +6,38 @@ namespace FantasyBurgers.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Appetizer
+    public partial class Sides
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Appetizer()
+        public Sides()
         {
             Carts = new HashSet<Cart>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        public int AppetizerId { get; set; }
+        public int SideId { get; set; }
 
         [Required]
-<<<<<<< HEAD
-        [StringLength(50)]
         [Display(Name = "Name")]
-=======
->>>>>>> refs/remotes/origin/master
-        public string AppetizerName { get; set; }
+        public string SideName { get; set; }
 
         [Required]
         [StringLength(50)]
-<<<<<<< HEAD
         [Display(Name = "Description")]
-=======
->>>>>>> refs/remotes/origin/master
-        public string AppetizerShortDescription { get; set; }
+        public string SideShortDescription { get; set; }
 
-        public string AppetizerLongDescription { get; set; }
+        [Display(Name = "Detailed Description")]
+        [ScaffoldColumn(false)]
+        public string SideLongDescription { get; set; }
 
+        [Required]
         [Column(TypeName = "numeric")]
-<<<<<<< HEAD
         [Display(Name = "Price")]
-        public decimal AppetizerPrice { get; set; }
+        public decimal SidePrice { get; set; }
 
         [Display(Name = "Display")]
         [ScaffoldColumn(false)]
-=======
-        public decimal AppetizerPrice { get; set; }
-
->>>>>>> refs/remotes/origin/master
-        public string AppetizerImage { get; set; }
+        public string SideImage { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }

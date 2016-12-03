@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FantasyBurgers.Models.Cart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Appetizer.AppetizerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Burger.BurgerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Drink.DrinkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Side.SideName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CartId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appetizer.AppetizerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Burger.BurgerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Drink.DrinkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Side.SideName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CartId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RecordId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RecordId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RecordId })
+        </td>
+    </tr>
+}
+
+</table>

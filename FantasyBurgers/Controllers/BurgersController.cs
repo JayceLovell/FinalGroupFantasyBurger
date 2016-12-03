@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
 {
     public class BurgersController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
         // GET: Burgers
         public ActionResult Index()
@@ -42,17 +42,15 @@ namespace FantasyBurgers.Controllers
             return View(burger);
         }
 
-        // GET: AdminBurgers/Create
-        [Authorize(Roles = "Admin")]
+        // GET: Burgers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminBurgers/Create
+        // POST: Burgers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "BurgerId,BurgerName,BurgerShortDescription,BurgerLongDescription,BurgerPrice,BurgerImage")] Burger burger)
@@ -67,8 +65,7 @@ namespace FantasyBurgers.Controllers
             return View(burger);
         }
 
-        // GET: AdminBurgers/Edit/5
-        [Authorize(Roles = "Admin")]
+        // GET: Burgers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,10 +80,9 @@ namespace FantasyBurgers.Controllers
             return View(burger);
         }
 
-        // POST: AdminBurgers/Edit/5
+        // POST: Burgers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BurgerId,BurgerName,BurgerShortDescription,BurgerLongDescription,BurgerPrice,BurgerImage")] Burger burger)
@@ -100,8 +96,7 @@ namespace FantasyBurgers.Controllers
             return View(burger);
         }
 
-        // GET: AdminBurgers/Delete/5
-        [Authorize(Roles = "Admin")]
+        // GET: Burgers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,8 +111,7 @@ namespace FantasyBurgers.Controllers
             return View(burger);
         }
 
-        // POST: AdminBurgers/Delete/5
-        [Authorize(Roles = "Admin")]
+        // POST: Burgers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -127,7 +121,7 @@ namespace FantasyBurgers.Controllers
             db.SaveChanges();
             return RedirectToAction("Admin");
         }
-        [Authorize(Roles = "Admin")]
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
