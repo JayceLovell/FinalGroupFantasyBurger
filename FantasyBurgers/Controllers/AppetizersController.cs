@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
 {
     public class AppetizersController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
         // GET: Appetizers
         public ActionResult Index()
@@ -42,19 +42,19 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Create
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminAppetizers/Create
+        // POST: Appetizers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "AppetizerId,AppetizerName,AppetizerShortDescription,AppetizerLongDescription,AppetizerPrice,AppetizerImage")] Appetizer appetizer)
         {
             if (ModelState.IsValid)
@@ -67,8 +67,8 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Edit/5
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,12 +83,12 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // POST: AdminAppetizers/Edit/5
+        // POST: Appetizers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "AppetizerId,AppetizerName,AppetizerShortDescription,AppetizerLongDescription,AppetizerPrice,AppetizerImage")] Appetizer appetizer)
         {
             if (ModelState.IsValid)
@@ -100,8 +100,8 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Delete/5
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,9 +116,10 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // POST: AdminAppetizers/Delete/5
+        // POST: Appetizers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Appetizer appetizer = db.Appetizers.Find(id);

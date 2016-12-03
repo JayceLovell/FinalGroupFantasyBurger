@@ -12,18 +12,19 @@ namespace FantasyBurgers.Controllers
 {
     public class DrinksController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
         // GET: Drinks
         public ActionResult Index()
         {
-            return View(db.Drink.ToList());
+            return View(db.Drinks.ToList());
         }
+
         //Get: Admin
         [Authorize(Roles = "Admin")]
         public ActionResult Admin()
         {
-            return View(db.Drink.ToList());
+            return View(db.Drinks.ToList());
         }
 
         // GET: Drinks/Details/5
@@ -33,7 +34,7 @@ namespace FantasyBurgers.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drinks drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -42,7 +43,6 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Drinks/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -51,14 +51,13 @@ namespace FantasyBurgers.Controllers
         // POST: Drinks/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DrinkId,Drink1,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
+        public ActionResult Create([Bind(Include = "DrinkId,DrinkName,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drinks drink)
         {
             if (ModelState.IsValid)
             {
-                db.Drink.Add(drink);
+                db.Drinks.Add(drink);
                 db.SaveChanges();
                 return RedirectToAction("Admin");
             }
@@ -67,14 +66,13 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Drinks/Edit/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drinks drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -85,10 +83,9 @@ namespace FantasyBurgers.Controllers
         // POST: Drinks/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DrinkId,Drink1,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
+        public ActionResult Edit([Bind(Include = "DrinkId,DrinkName,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drinks drink)
         {
             if (ModelState.IsValid)
             {
@@ -100,14 +97,13 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Drinks/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drinks drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -116,17 +112,16 @@ namespace FantasyBurgers.Controllers
         }
 
         // POST: Drinks/Delete/5
-        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Drink drink = db.Drink.Find(id);
-            db.Drink.Remove(drink);
+            Drinks drink = db.Drinks.Find(id);
+            db.Drinks.Remove(drink);
             db.SaveChanges();
             return RedirectToAction("Admin");
         }
-        [Authorize(Roles = "Admin")]
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

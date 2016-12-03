@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
 {
     public class SidesController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
         // GET: Sides
         public ActionResult Index()
@@ -34,7 +34,7 @@ namespace FantasyBurgers.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Side side = db.Sides.Find(id);
+            Sides side = db.Sides.Find(id);
             if (side == null)
             {
                 return HttpNotFound();
@@ -43,7 +43,6 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Sides/Create
-        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -52,10 +51,9 @@ namespace FantasyBurgers.Controllers
         // POST: Sides/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SideId,SideName,SideShortDescription,SideLongDescription,SidePrice,SideImage")] Side side)
+        public ActionResult Create([Bind(Include = "SideId,SideName,SideShortDescription,SideLongDescription,SidePrice,SideImage")] Sides side)
         {
             if (ModelState.IsValid)
             {
@@ -68,14 +66,13 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Sides/Edit/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Side side = db.Sides.Find(id);
+            Sides side = db.Sides.Find(id);
             if (side == null)
             {
                 return HttpNotFound();
@@ -86,10 +83,9 @@ namespace FantasyBurgers.Controllers
         // POST: Sides/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SideId,SideName,SideShortDescription,SideLongDescription,SidePrice,SideImage")] Side side)
+        public ActionResult Edit([Bind(Include = "SideId,SideName,SideShortDescription,SideLongDescription,SidePrice,SideImage")] Sides side)
         {
             if (ModelState.IsValid)
             {
@@ -101,14 +97,13 @@ namespace FantasyBurgers.Controllers
         }
 
         // GET: Sides/Delete/5
-        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Side side = db.Sides.Find(id);
+            Sides side = db.Sides.Find(id);
             if (side == null)
             {
                 return HttpNotFound();
@@ -117,17 +112,16 @@ namespace FantasyBurgers.Controllers
         }
 
         // POST: Sides/Delete/5
-        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Side side = db.Sides.Find(id);
+            Sides side = db.Sides.Find(id);
             db.Sides.Remove(side);
             db.SaveChanges();
             return RedirectToAction("Admin");
         }
-        [Authorize(Roles = "Admin")]
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

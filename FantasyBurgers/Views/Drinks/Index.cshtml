@@ -1,5 +1,4 @@
-﻿
-<!--
+﻿<!--
     File Name: Index.cshtml
     Authors: Sahil Mahajan
              Waynell Lovell
@@ -9,7 +8,7 @@
  -->
 
 
-@model IEnumerable<FantasyBurgers.Models.Drink>
+@model IEnumerable<FantasyBurgers.Models.Drinks>
 
 @{
     ViewBag.Title = "Drinks";
@@ -20,7 +19,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Drink1)
+                @Html.DisplayNameFor(model => model.DrinkName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DrinkShortDescription)
@@ -35,7 +34,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Drink1)
+                    @Html.DisplayFor(modelItem => item.DrinkName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DrinkShortDescription)

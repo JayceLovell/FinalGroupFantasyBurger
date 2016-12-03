@@ -16,11 +16,13 @@ namespace FantasyBurgers.Models
         [StringLength(50)]
         public string CartId { get; set; }
 
-        public int AppetizerId { get; set; }
+        public int AppetizersId { get; set; }
 
-        public int BurgerId { get; set; }
+        public int BurgersId { get; set; }
 
-        public int DrinkId { get; set; }
+        public int DrinksId { get; set; }
+
+        public int SidesId { get; set; }
 
         public int Count { get; set; }
 
@@ -30,6 +32,8 @@ namespace FantasyBurgers.Models
 
         public virtual Burger Burger { get; set; }
 
-        public virtual Drink Drink { get; set; }
+        public virtual Drinks Drink { get; set; }
+
+        public virtual Sides Side { get; set; }
     }
 }
