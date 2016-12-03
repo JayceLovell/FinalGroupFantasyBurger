@@ -18,26 +18,34 @@ namespace FantasyBurgers.Models
         public int AppetizerId { get; set; }
 
         [Required]
+<<<<<<< HEAD
         [StringLength(50)]
         [Display(Name = "Name")]
+=======
+>>>>>>> refs/remotes/origin/master
         public string AppetizerName { get; set; }
 
         [Required]
         [StringLength(50)]
+<<<<<<< HEAD
         [Display(Name = "Description")]
+=======
+>>>>>>> refs/remotes/origin/master
         public string AppetizerShortDescription { get; set; }
 
-        [Display(Name = "Detailed Description")]
-        [ScaffoldColumn(false)]
         public string AppetizerLongDescription { get; set; }
 
-        [Required]
         [Column(TypeName = "numeric")]
+<<<<<<< HEAD
         [Display(Name = "Price")]
         public decimal AppetizerPrice { get; set; }
 
         [Display(Name = "Display")]
         [ScaffoldColumn(false)]
+=======
+        public decimal AppetizerPrice { get; set; }
+
+>>>>>>> refs/remotes/origin/master
         public string AppetizerImage { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
