@@ -11,17 +11,23 @@ namespace FantasyBurgers.Models
         public int DrinkId { get; set; }
 
         [Required]
+        [Display(Name = "Name")]
         public string DrinkName { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Description")]
         public string DrinkShortDescription { get; set; }
 
+        [Display(Name = "Detailed Description")]
         public string DrinkLongDescription { get; set; }
 
+        [Required]
         [Column(TypeName = "numeric")]
+        [Display(Name = "Price")]
         public decimal DrinkPrice { get; set; }
 
+        [Display(Name = "Display")]
         public string DrinkImage { get; set; }
     }
 }
