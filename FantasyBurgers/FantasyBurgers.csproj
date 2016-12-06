@@ -357,10 +357,15 @@
     <Content Include="Views\Appetizers\Edit.cshtml" />
     <Content Include="Views\Appetizers\Index.cshtml" />
     <Content Include="Views\Appetizers\Admin.cshtml" />
+    <Content Include="Views\Burgers\Index.cshtml" />
+    <Content Include="Views\Burgers\Admin.cshtml" />
+    <Content Include="Views\Burgers\Details.cshtml" />
+    <Content Include="Views\Burgers\Create.cshtml" />
+    <Content Include="Views\Burgers\Edit.cshtml" />
+    <Content Include="Views\Burgers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Burgers\" />
     <Folder Include="Views\Drinks\" />
     <Folder Include="Views\Sides\" />
   </ItemGroup>
