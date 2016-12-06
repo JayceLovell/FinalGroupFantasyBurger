@@ -3,49 +3,46 @@
 @{
     ViewBag.Title = "Appetizer Details";
 }
-<div style="margin-top: 165px;">
-    <h2>Appetizer Details</h2>
+<div>
+    <h4>Appetizer Detauks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AppetizerName)
+        </dt>
 
-    <div>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.AppetizerName)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AppetizerName)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.AppetizerName)
-            </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AppetizerLongDescription)
+        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.AppetizerLongDescription)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AppetizerLongDescription)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.AppetizerLongDescription)
-            </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AppetizerPrice)
+        </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.AppetizerPrice)
-            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AppetizerPrice)
+        </dd>
+        <dd>
+            <img class="detailsimages img-rounded" src="@Url.Content(Model.AppetizerImage)" />
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.AppetizerPrice)
-            </dd>
-            <dd>
-                <img class="detailsimages img-rounded" src="@Url.Content(Model.AppetizerImage)" />
-            </dd>
-
-        </dl>
-    </div>
-    <p>
-        @if (HttpContext.Current.User.IsInRole("Admin"))
-        {
-            @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary btn-lg" })
-        }
-        else
-        {
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
-        }
-    </p>
+    </dl>
 </div>
+<p>
+    @if (HttpContext.Current.User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary btn-lg" })
+    }
+    else
+    {
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
+    }
+</p>

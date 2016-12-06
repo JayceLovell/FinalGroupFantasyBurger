@@ -8,13 +8,6 @@ namespace FantasyBurgers.Models
 
     public partial class Burger
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Burger()
-        {
-            Carts = new HashSet<Cart>();
-            OrderDetails = new HashSet<OrderDetail>();
-        }
-
         public int BurgerId { get; set; }
 
         [Required]
@@ -30,11 +23,5 @@ namespace FantasyBurgers.Models
         public decimal BurgerPrice { get; set; }
 
         public string BurgerImage { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cart> Carts { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

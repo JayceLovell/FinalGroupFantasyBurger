@@ -6,22 +6,22 @@ namespace FantasyBurgers.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Drink
+    public partial class Side
     {
-        public int DrinkId { get; set; }
+        public int SideId { get; set; }
 
         [Required]
-        public string DrinkName { get; set; }
+        public string SideName { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string DrinkShortDescription { get; set; }
+        public string SideShortDescription { get; set; }
 
-        public string DrinkLongDescription { get; set; }
+        public string SideLongDescription { get; set; }
 
         [Column(TypeName = "numeric")]
-        public decimal DrinkPrice { get; set; }
+        public decimal SidePrice { get; set; }
 
-        public string DrinkImage { get; set; }
+        public string SideImage { get; set; }
     }
 }

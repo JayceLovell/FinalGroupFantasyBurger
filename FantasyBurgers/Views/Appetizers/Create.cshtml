@@ -31,10 +31,10 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.AppetizerLongDescription, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.AppetizerLongDescription, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AppetizerLongDescription, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.AppetizerLongDescription,htmlAttributes: new { @class="control-label col-md-2"})
+                <div class="=col-md-10">
+                    @Html.EditorFor(model => model.AppetizerLongDescription, new { htmlAttributes =new {@class="form-control"}})
+                    @Html.ValidationMessageFor(model => model.AppetizerLongDescription, "",new { @class="text-danger"})
                 </div>
             </div>
 
@@ -63,9 +63,9 @@
     }
 
     <div>
-        @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "Admin",bull,new { @class = "btn btn-primary" })
     </div>
 </div>
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

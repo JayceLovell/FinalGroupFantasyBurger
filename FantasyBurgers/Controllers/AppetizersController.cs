@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
 {
     public class AppetizersController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgerContext db = new FantasyBurgerContext();
 
         // GET: Appetizers
         public ActionResult Index()
@@ -20,8 +20,8 @@ namespace FantasyBurgers.Controllers
             return View(db.Appetizers.ToList());
         }
 
-        [Authorize(Roles = "Admin")]
-        // GET: Appetizers for Admin
+        [Authorize(Roles ="Admin")]
+        //Get: Appetziers/Admin
         public ActionResult Admin()
         {
             return View(db.Appetizers.ToList());
@@ -42,14 +42,14 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Create
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminAppetizers/Create
+        // POST: Appetizers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize(Roles = "Admin")]
@@ -61,14 +61,14 @@ namespace FantasyBurgers.Controllers
             {
                 db.Appetizers.Add(appetizer);
                 db.SaveChanges();
-                return RedirectToAction("Admin");
+                return RedirectToAction("Index");
             }
 
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Edit/5
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,7 +83,7 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // POST: AdminAppetizers/Edit/5
+        // POST: Appetizers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize(Roles = "Admin")]
@@ -95,13 +95,13 @@ namespace FantasyBurgers.Controllers
             {
                 db.Entry(appetizer).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Admin");
+                return RedirectToAction("Index");
             }
             return View(appetizer);
         }
 
-        // GET: AdminAppetizers/Delete/5
         [Authorize(Roles = "Admin")]
+        // GET: Appetizers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,7 +116,8 @@ namespace FantasyBurgers.Controllers
             return View(appetizer);
         }
 
-        // POST: AdminAppetizers/Delete/5
+        // POST: Appetizers/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -124,8 +125,9 @@ namespace FantasyBurgers.Controllers
             Appetizer appetizer = db.Appetizers.Find(id);
             db.Appetizers.Remove(appetizer);
             db.SaveChanges();
-            return RedirectToAction("Admin");
+            return RedirectToAction("Index");
         }
+
         [Authorize(Roles = "Admin")]
         protected override void Dispose(bool disposing)
         {
