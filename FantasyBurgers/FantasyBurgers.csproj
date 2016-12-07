@@ -369,10 +369,15 @@
     <Content Include="Views\Drinks\Create.cshtml" />
     <Content Include="Views\Drinks\Edit.cshtml" />
     <Content Include="Views\Drinks\Delete.cshtml" />
+    <Content Include="Views\Sides\Index.cshtml" />
+    <Content Include="Views\Sides\Admin.cshtml" />
+    <Content Include="Views\Sides\Details.cshtml" />
+    <Content Include="Views\Sides\Create.cshtml" />
+    <Content Include="Views\Sides\Edit.cshtml" />
+    <Content Include="Views\Sides\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sides\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
