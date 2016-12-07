@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FantasyBurgers.Models.Drink>
+
+@{
+    ViewBag.Title = "Admin Drinks";
+}
+
+<div style="margin-top: 165px">
+    <p>
+        @Html.ActionLink("Create New Drink", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DrinkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrinkShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DrinkPrice)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrinkName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrinkShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DrinkPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DrinkId }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DrinkId }, new { @class = "btn btn-success btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DrinkId }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
