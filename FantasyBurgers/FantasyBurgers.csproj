@@ -183,10 +183,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appetizer.cs" />
     <Compile Include="Models\Burger.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\FantasyBurgerContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Side.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

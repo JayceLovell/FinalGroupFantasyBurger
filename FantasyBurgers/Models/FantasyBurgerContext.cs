@@ -8,32 +8,17 @@ namespace FantasyBurgers.Models
     public partial class FantasyBurgerContext : DbContext
     {
         public FantasyBurgerContext()
-            : base("name=FantasyBurgerConnection")
+            : base("name=FantasyBurgerConnectionString")
         {
         }
 
         public virtual DbSet<Appetizer> Appetizers { get; set; }
         public virtual DbSet<Burger> Burgers { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Drink> Drinks { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Side> Sides { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Appetizer>()
-                .Property(e => e.AppetizerPrice)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Burger>()
-                .Property(e => e.BurgerPrice)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Drink>()
-                .Property(e => e.DrinkPrice)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Side>()
-                .Property(e => e.SidePrice)
-                .HasPrecision(10, 2);
-        }
     }
 }
