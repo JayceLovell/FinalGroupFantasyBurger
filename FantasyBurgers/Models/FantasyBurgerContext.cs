@@ -5,17 +5,16 @@ namespace FantasyBurgers.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class FantasyBurgersContext : DbContext
+    public partial class FantasyBurgerContext : DbContext
     {
-        public FantasyBurgersContext()
-            : base("name=FantasyBurgersConnectionString")
+        public FantasyBurgerContext()
+            : base("name=FantasyBurgerConnection")
         {
         }
 
         public virtual DbSet<Appetizer> Appetizers { get; set; }
         public virtual DbSet<Burger> Burgers { get; set; }
-        public virtual DbSet<Dessert> Desserts { get; set; }
-        public virtual DbSet<Drink> Drink { get; set; }
+        public virtual DbSet<Drink> Drinks { get; set; }
         public virtual DbSet<Side> Sides { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,10 +25,6 @@ namespace FantasyBurgers.Models
 
             modelBuilder.Entity<Burger>()
                 .Property(e => e.BurgerPrice)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Dessert>()
-                .Property(e => e.DessertPrice)
                 .HasPrecision(10, 2);
 
             modelBuilder.Entity<Drink>()

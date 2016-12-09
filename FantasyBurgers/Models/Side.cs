@@ -20,7 +20,6 @@ namespace FantasyBurgers.Models
         public string SideShortDescription { get; set; }
 
         [Display(Name = "Detailed Description")]
-        [ScaffoldColumn(false)]
         public string SideLongDescription { get; set; }
 
         [Required]
@@ -29,7 +28,6 @@ namespace FantasyBurgers.Models
         public decimal SidePrice { get; set; }
 
         [Display(Name = "Display")]
-        [ScaffoldColumn(false)]
         public string SideImage { get; set; }
     }
 }

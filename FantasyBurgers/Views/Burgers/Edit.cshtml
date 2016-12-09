@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edit Burger";
 }
-<div style="margin-top: 165px;">
+<div style="margin-top:165px;">
     <h2>Edit Burger</h2>
 
 
@@ -12,6 +12,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
+            <h4>Burger</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.BurgerId)

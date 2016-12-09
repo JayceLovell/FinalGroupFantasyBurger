@@ -11,7 +11,6 @@ namespace FantasyBurgers.Models
         public int AppetizerId { get; set; }
 
         [Required]
-        [StringLength(50)]
         [Display(Name ="Name")]
         public string AppetizerName { get; set; }
 
@@ -20,8 +19,8 @@ namespace FantasyBurgers.Models
         [Display(Name ="Description")]
         public string AppetizerShortDescription { get; set; }
 
-        [Display(Name = "Detailed Description")]
         [ScaffoldColumn(false)]
+        [Display(Name ="Detailed Description")]
         public string AppetizerLongDescription { get; set; }
 
         [Required]
