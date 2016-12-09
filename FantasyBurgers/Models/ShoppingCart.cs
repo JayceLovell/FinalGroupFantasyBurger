@@ -49,7 +49,6 @@ namespace FantasyBurgers.Models
             var cartItem = storeDB.Carts.SingleOrDefault(
 
                 c => c.CartId == ShoppingCartId
-
                 && c.AppetizersId == appetizer.AppetizerId);
 
 
