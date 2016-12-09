@@ -383,10 +383,10 @@
     <Content Include="Views\Sides\Create.cshtml" />
     <Content Include="Views\Sides\Edit.cshtml" />
     <Content Include="Views\Sides\Delete.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
