@@ -49,7 +49,7 @@ namespace FantasyBurgers.Models
             var cartItem = storeDB.Carts.SingleOrDefault(
 
                 c => c.CartId == ShoppingCartId
-
+                // PROBLEM IS AT LINE BELOW
                 && c.AppetizersId == appetizer.AppetizerId);
 
 
