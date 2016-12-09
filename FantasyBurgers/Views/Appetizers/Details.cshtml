@@ -1,7 +1,7 @@
 ﻿@model FantasyBurgers.Models.Appetizer
 
 @{
-    ViewBag.Title = "Appetizer Details";
+    ViewBag.Title = "Appetizer"+Model.AppetizerName;
 }
 <div style="margin-top:165px;">
     <h4>Appetizer Details</h4>
@@ -45,4 +45,6 @@
     {
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
     }
+    |
+    @Html.ActionLink("Add to cart","AddToCart","ShoppingCart",new { id = Model.AppetizerId },new { @class = "btn btn-info btn-lg" })
 </p>
