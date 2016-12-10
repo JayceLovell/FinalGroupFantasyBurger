@@ -1,39 +1,36 @@
-namespace FantasyBurgers.Models
-{
+namespace FantasyBurgers.Models {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("OrderDetail")]
-    public partial class OrderDetail
-    {
+    public partial class OrderDetail {
         public int OrderDetailId { get; set; }
 
         public int OrderId { get; set; }
 
-        public int AppetizersId { get; set; }
+        [Required]
+        public int PurchasableItemId { get; set; }
 
-        public int BurgersId { get; set; }
+        [Required]
+        public String PurchasableItemType { get; set; }
 
-        public int DrinksId { get; set; }
-
-        public int SidesId { get; set; }
-
+        [Required]
         public int Quantity { get; set; }
 
         [Column(TypeName = "numeric")]
         public decimal UnitPrice { get; set; }
+    }
 
-        public virtual Appetizer Appetizer { get; set; }
+    public partial class OrderDetail {
 
-        public virtual Burger Burger { get; set; }
+        private FantasyBurgerContext storeDB = new FantasyBurgerContext();
 
-        public virtual Drink Drink { get; set; }
-
-        public virtual Order Order { get; set; }
-
-        public virtual Side Side { get; set; }
+        public PurchasableItem getItem() {
+            return storeDB.getItem(PurchasableItemType, PurchasableItemId);
+        }
     }
 }

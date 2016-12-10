@@ -185,6 +185,7 @@
     <Compile Include="Models\Appetizer.cs" />
     <Compile Include="Models\Burger.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\PurchasableItem.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\FantasyBurgerContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
