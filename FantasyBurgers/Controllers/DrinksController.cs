@@ -12,18 +12,19 @@ namespace FantasyBurgers.Controllers
 {
     public class DrinksController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgerContext db = new FantasyBurgerContext();
 
         // GET: Drinks
         public ActionResult Index()
         {
-            return View(db.Drink.ToList());
+            return View(db.Drinks.ToList());
         }
-        //Get: Admin
+
+        //Get: Drinks/Admin
         [Authorize(Roles = "Admin")]
         public ActionResult Admin()
         {
-            return View(db.Drink.ToList());
+            return View(db.Drinks.ToList());
         }
 
         // GET: Drinks/Details/5
@@ -33,7 +34,7 @@ namespace FantasyBurgers.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drink drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -54,11 +55,11 @@ namespace FantasyBurgers.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DrinkId,Drink1,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
+        public ActionResult Create([Bind(Include = "DrinkId,DrinkName,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
         {
             if (ModelState.IsValid)
             {
-                db.Drink.Add(drink);
+                db.Drinks.Add(drink);
                 db.SaveChanges();
                 return RedirectToAction("Admin");
             }
@@ -74,7 +75,7 @@ namespace FantasyBurgers.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drink drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -88,7 +89,7 @@ namespace FantasyBurgers.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DrinkId,Drink1,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
+        public ActionResult Edit([Bind(Include = "DrinkId,DrinkName,DrinkShortDescription,DrinkLongDescription,DrinkPrice,DrinkImage")] Drink drink)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +108,7 @@ namespace FantasyBurgers.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drink drink = db.Drink.Find(id);
+            Drink drink = db.Drinks.Find(id);
             if (drink == null)
             {
                 return HttpNotFound();
@@ -121,8 +122,8 @@ namespace FantasyBurgers.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Drink drink = db.Drink.Find(id);
-            db.Drink.Remove(drink);
+            Drink drink = db.Drinks.Find(id);
+            db.Drinks.Remove(drink);
             db.SaveChanges();
             return RedirectToAction("Admin");
         }

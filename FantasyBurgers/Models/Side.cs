@@ -6,30 +6,28 @@ namespace FantasyBurgers.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Appetizer
+    public partial class Side
     {
-        public int AppetizerId { get; set; }
+        public int SideId { get; set; }
 
         [Required]
         [Display(Name = "Name")]
-        public string AppetizerName { get; set; }
+        public string SideName { get; set; }
 
         [Required]
         [StringLength(50)]
         [Display(Name = "Description")]
-        public string AppetizerShortDescription { get; set; }
+        public string SideShortDescription { get; set; }
 
-        [ScaffoldColumn(false)]
         [Display(Name = "Detailed Description")]
-        public string AppetizerLongDescription { get; set; }
+        public string SideLongDescription { get; set; }
 
         [Required]
         [Column(TypeName = "numeric")]
         [Display(Name = "Price")]
-        public decimal AppetizerPrice { get; set; }
+        public decimal SidePrice { get; set; }
 
         [Display(Name = "Display")]
-        [ScaffoldColumn(false)]
-        public string AppetizerImage { get; set; }
+        public string SideImage { get; set; }
     }
 }

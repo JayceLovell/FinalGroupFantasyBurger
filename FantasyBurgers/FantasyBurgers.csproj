@@ -176,6 +176,7 @@
     <Compile Include="Controllers\DrinksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SidesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,13 +186,17 @@
     <Compile Include="Models\Burger.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Drink.cs" />
-    <Compile Include="Models\FantasyBurgerFinal.cs" />
+    <Compile Include="Models\FantasyBurgerContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
-    <Compile Include="Models\Ordr.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\Side.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -232,7 +237,6 @@
     <Content Include="Content\Images\Icons\bread_black.png" />
     <Content Include="Content\Images\Icons\bread_color.png" />
     <Content Include="Content\Images\Icons\burger_sandwich.png" />
-    <Content Include="Content\Images\DefaultDessertImage.jpg" />
     <Content Include="Content\Images\DefaultBurgerImage.jpg" />
     <Content Include="Content\Images\DefaultAppetizerImage.jpg" />
     <Content Include="Content\Images\HotChocolate.jpg" />
@@ -245,7 +249,6 @@
     <Content Include="Content\Images\Icons\reserve_color.png" />
     <Content Include="Content\Images\map_image2.jpg" />
     <Content Include="Content\Images\MashedPotatoes.jpg" />
-    <Content Include="Content\Images\MessyCookie.jpg" />
     <Content Include="Content\Images\MixedVegetables.jpg" />
     <Content Include="Content\Images\OutSideFBs.JPG" />
     <Content Include="Content\Images\PastaSalad.jpg" />
@@ -264,7 +267,6 @@
     <Content Include="Content\Images\StuffedGarlic.jpg" />
     <Content Include="Content\Images\sweetBalls.jpg" />
     <Content Include="Content\Images\Water.jpg" />
-    <Content Include="Content\Images\WhiteChocolate.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Images\MushroomBacon.JPG" />
     <Content Include="Content\owl.carousel.css" />
@@ -357,30 +359,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Appetizers\Create.cshtml" />
+    <Content Include="Views\Appetizers\Delete.cshtml" />
     <Content Include="Views\Appetizers\Details.cshtml" />
+    <Content Include="Views\Appetizers\Edit.cshtml" />
     <Content Include="Views\Appetizers\Index.cshtml" />
-    <Content Include="Views\Burgers\Details.cshtml" />
+    <Content Include="Views\Appetizers\Admin.cshtml" />
     <Content Include="Views\Burgers\Index.cshtml" />
-    <Content Include="Views\Drinks\Details.cshtml" />
+    <Content Include="Views\Burgers\Admin.cshtml" />
+    <Content Include="Views\Burgers\Details.cshtml" />
+    <Content Include="Views\Burgers\Create.cshtml" />
+    <Content Include="Views\Burgers\Edit.cshtml" />
+    <Content Include="Views\Burgers\Delete.cshtml" />
     <Content Include="Views\Drinks\Index.cshtml" />
     <Content Include="Views\Drinks\Admin.cshtml" />
+    <Content Include="Views\Drinks\Details.cshtml" />
     <Content Include="Views\Drinks\Create.cshtml" />
     <Content Include="Views\Drinks\Edit.cshtml" />
     <Content Include="Views\Drinks\Delete.cshtml" />
-    <Content Include="Views\Appetizers\Admin.cshtml" />
-    <Content Include="Views\Appetizers\Create.cshtml" />
-    <Content Include="Views\Appetizers\Edit.cshtml" />
-    <Content Include="Views\Appetizers\Delete.cshtml" />
-    <Content Include="Views\Burgers\Create.cshtml" />
-    <Content Include="Views\Burgers\Edit.cshtml" />
-    <Content Include="Views\Burgers\Admin.cshtml" />
-    <Content Include="Views\Burgers\Delete.cshtml" />
-    <Content Include="Views\Sides\Create.cshtml" />
-    <Content Include="Views\Sides\Delete.cshtml" />
-    <Content Include="Views\Sides\Details.cshtml" />
-    <Content Include="Views\Sides\Edit.cshtml" />
     <Content Include="Views\Sides\Index.cshtml" />
     <Content Include="Views\Sides\Admin.cshtml" />
+    <Content Include="Views\Sides\Details.cshtml" />
+    <Content Include="Views\Sides\Create.cshtml" />
+    <Content Include="Views\Sides\Edit.cshtml" />
+    <Content Include="Views\Sides\Delete.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

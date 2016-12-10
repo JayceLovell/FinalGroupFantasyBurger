@@ -13,11 +13,13 @@ namespace FantasyBurgers.Models
 
         public int OrderId { get; set; }
 
-        public int AppetizerId { get; set; }
+        public int AppetizersId { get; set; }
 
-        public int BurgerId { get; set; }
+        public int BurgersId { get; set; }
 
-        public int DrinkId { get; set; }
+        public int DrinksId { get; set; }
+
+        public int SidesId { get; set; }
 
         public int Quantity { get; set; }
 
@@ -30,6 +32,8 @@ namespace FantasyBurgers.Models
 
         public virtual Drink Drink { get; set; }
 
-        public virtual Ordr Ordr { get; set; }
+        public virtual Order Order { get; set; }
+
+        public virtual Side Side { get; set; }
     }
 }

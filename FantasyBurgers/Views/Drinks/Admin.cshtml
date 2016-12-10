@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<FantasyBurgers.Models.Drink>
 
 @{
-    ViewBag.Title = "Drinks Admin";
+    ViewBag.Title = "Admin Drinks";
 }
 
-<div style="margin-top: 165px;">
-
+<div style="margin-top: 165px">
     <p>
         @Html.ActionLink("Create New Drink", "Create")
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Drink1)
+                @Html.DisplayNameFor(model => model.DrinkName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DrinkShortDescription)
@@ -27,7 +26,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Drink1)
+                    @Html.DisplayFor(modelItem => item.DrinkName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DrinkShortDescription)
@@ -44,4 +43,3 @@
         }
 
     </table>
-</div>

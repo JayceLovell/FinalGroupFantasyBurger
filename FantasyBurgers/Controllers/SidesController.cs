@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
 {
     public class SidesController : Controller
     {
-        private FantasyBurgersContext db = new FantasyBurgersContext();
+        private FantasyBurgerContext db = new FantasyBurgerContext();
 
         // GET: Sides
         public ActionResult Index()
@@ -20,7 +20,7 @@ namespace FantasyBurgers.Controllers
             return View(db.Sides.ToList());
         }
 
-        // GET: Sides/Admin
+        //Get: Sides/Admin
         [Authorize(Roles = "Admin")]
         public ActionResult Admin()
         {
@@ -52,9 +52,9 @@ namespace FantasyBurgers.Controllers
         // POST: Sides/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "SideId,SideName,SideShortDescription,SideLongDescription,SidePrice,SideImage")] Side side)
         {
             if (ModelState.IsValid)

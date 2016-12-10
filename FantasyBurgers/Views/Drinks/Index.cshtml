@@ -1,26 +1,14 @@
-﻿
-<!--
-    File Name: Index.cshtml
-    Authors: Sahil Mahajan
-             Waynell Lovell
-             Anmol Sharma
-    Website Name: fantasyburgers.azurewebsites.net
-    File Description: Main file of the Drinks Page
- -->
-
-
-@model IEnumerable<FantasyBurgers.Models.Drink>
+﻿@model IEnumerable<FantasyBurgers.Models.Drink>
 
 @{
     ViewBag.Title = "Drinks";
 }
-
-<div style="margin-top: 165px;">
+<div style="margin-top:165px;">
     <h2>Drinks</h2>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Drink1)
+                @Html.DisplayNameFor(model => model.DrinkName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DrinkShortDescription)
@@ -35,7 +23,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Drink1)
+                    @Html.DisplayFor(modelItem => item.DrinkName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DrinkShortDescription)

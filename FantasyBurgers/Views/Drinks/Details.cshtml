@@ -3,19 +3,19 @@
 @{
     ViewBag.Title = "Drink Details";
 }
-
-<div style="margin-top: 165px;">
+<div style="margin-top:165px;">
     <h2>Drink Details</h2>
 
     <div>
+        <h4>Drink</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
-                @Html.DisplayNameFor(model => model.Drink1)
+                @Html.DisplayNameFor(model => model.DrinkName)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Drink1)
+                @Html.DisplayFor(model => model.DrinkName)
             </dd>
 
             <dt>
@@ -34,20 +34,19 @@
                 @Html.DisplayFor(model => model.DrinkPrice)
             </dd>
 
-
             <dd>
-                <img src="@Url.Content(Model.DrinkImage)" class="img-rounded detailsimages" />
+                <img class="detailsimages img-rounded" src="@Url.Content(Model.DrinkImage)" />
             </dd>
+
         </dl>
     </div>
     <p>
         @if (HttpContext.Current.User.IsInRole("Admin"))
-            {
-            @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary" })
+        {
+            @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary btn-lg" })
         }
         else
         {
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
         }
     </p>
-</div>

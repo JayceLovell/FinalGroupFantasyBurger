@@ -1,20 +1,10 @@
-﻿<!-- 
-    File Name: Index.cshtml
-    Authors: Sahil Mahajan
-             Waynell Lovell
-             Anmol Sharma
-    Website Name: fantasyburgers.azurewebsites.net
-    File Description: Main file of the Burgers Page
- -->
-
-@model IEnumerable<FantasyBurgers.Models.Burger>
+﻿@model IEnumerable<FantasyBurgers.Models.Burger>
 
 @{
     ViewBag.Title = "Burgers";
 }
-<div style="margin-top: 165px;">
+<div style="margin-top:165px;">
     <h2>Burgers</h2>
-
     <table class="table">
         <tr>
             <th>
@@ -46,5 +36,6 @@
                 </td>
             </tr>
         }
+
     </table>
 </div>
