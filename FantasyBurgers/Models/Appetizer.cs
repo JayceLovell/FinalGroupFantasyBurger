@@ -1,13 +1,12 @@
-namespace FantasyBurgers.Models
-{
+namespace FantasyBurgers.Models {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Appetizer
-    {
+    public partial class Appetizer : PurchasableItem {
+
         public int AppetizerId { get; set; }
 
         [Required]
@@ -31,5 +30,17 @@ namespace FantasyBurgers.Models
         [Display(Name = "Display")]
         [ScaffoldColumn(false)]
         public string AppetizerImage { get; set; }
+
+        public int getItemId() {
+            return AppetizerId;
+        }
+
+        public decimal getPrice() {
+            return AppetizerPrice;
+        }
+
+        public string getName() {
+            return AppetizerName;
+        }
     }
 }

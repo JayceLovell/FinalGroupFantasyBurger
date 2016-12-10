@@ -5,10 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FantasyBurgers.Models
-{
-    public class ShoppingCart
-    {
+namespace FantasyBurgers.Models {
+    public class ShoppingCart {
         // PUBLIC Constant 
         public const string CartSessionKey = "CartId";
 
@@ -18,9 +16,7 @@ namespace FantasyBurgers.Models
         // PRIVATE PROPERTY
         string ShoppingCartId { get; set; }
 
-        public static ShoppingCart GetCart(HttpContextBase context)
-
-        {
+        public static ShoppingCart GetCart(HttpContextBase context) {
 
             var cart = new ShoppingCart();
 
@@ -32,49 +28,46 @@ namespace FantasyBurgers.Models
 
         // Helper method to simplify shopping cart calls
 
-        public static ShoppingCart GetCart(Controller controller)
-
-        {
-
+        public static ShoppingCart GetCart(Controller controller) {
             return GetCart(controller.HttpContext);
-
         }
 
-        public void AddToCart(Appetizer appetizer)
+        private Cart getCartItem(PurchasableItem purchasableItem) {
+            var cartItem = storeDB.Carts.SingleOrDefault(c => c.CartId == ShoppingCartId && c.PurchasableItemId == purchasableItem.getItemId());
+            return cartItem;
+        }
 
-        {
+        public void AddToCart(Appetizer appetizer) {
+            AddToCart(appetizer as PurchasableItem);
+        }
+
+        public void AddToCart(Burger burger) {
+            AddToCart(burger as PurchasableItem);
+        }
+
+        public void AddToCart(Drink drink) {
+            AddToCart(drink as PurchasableItem);
+        }
+
+        public void AddToCart(PurchasableItem purchasableItem) {
 
             // Get the matching cart and album instances
 
-            var cartItem = storeDB.Carts.SingleOrDefault(
-
-                c => c.CartId == ShoppingCartId
-
-                && c.AppetizersId == appetizer.AppetizerId);
-
+            var cartItem = getCartItem(purchasableItem);
 
             Debug.WriteLine(cartItem.ToString());
-            if (cartItem == null)
-            {
+            if (cartItem == null) {
                 // Create a new cart item if no cart item exists
 
-                cartItem = new Cart
-                {
-
-                    AppetizersId = appetizer.AppetizerId,
-
+                cartItem = new Cart {
+                    PurchasableItemId = purchasableItem.getItemId(),
                     CartId = ShoppingCartId,
-
                     Count = 1,
-
                     DateCreated = DateTime.Now
-
                 };
 
                 storeDB.Carts.Add(cartItem);
-            }
-            else
-            {
+            } else {
 
                 // If the item does exist in the cart, 
 
@@ -85,27 +78,21 @@ namespace FantasyBurgers.Models
             // Save changes
             storeDB.SaveChanges();
         }
-        public int RemoveFromCart(int id)
-        {
+
+        public int RemoveFromCart(int id) {
             // Get the cart
             var cartItem = storeDB.Carts.Single(
-
                 cart => cart.CartId == ShoppingCartId
-
                 && cart.RecordId == id);
 
             int itemCount = 0;
 
-            if (cartItem != null)
-            {
-                if (cartItem.Count > 1)
-                {
+            if (cartItem != null) {
+                if (cartItem.Count > 1) {
                     cartItem.Count--;
 
                     itemCount = cartItem.Count;
-                }
-                else
-                {
+                } else {
                     storeDB.Carts.Remove(cartItem);
                 }
 
@@ -114,23 +101,21 @@ namespace FantasyBurgers.Models
             }
             return itemCount;
         }
-        public void EmptyCart()
-        {
+        public void EmptyCart() {
             var cartItems = storeDB.Carts.Where(cart => cart.CartId == ShoppingCartId);
 
-            foreach (var cartItem in cartItems)
-            {
+            foreach (var cartItem in cartItems) {
                 storeDB.Carts.Remove(cartItem);
             }
             // Save changes
             storeDB.SaveChanges();
         }
-        public List<Cart> GetCartItems()
-        {
+
+        public List<Cart> GetCartItems() {
             return storeDB.Carts.Where(cart => cart.CartId == ShoppingCartId).ToList();
         }
-        public int GetCount()
-        {
+
+        public int GetCount() {
             // Get the count of each item in the cart and sum them up
             int? count = (from cartItems in storeDB.Carts
                           where cartItems.CartId == ShoppingCartId
@@ -139,17 +124,16 @@ namespace FantasyBurgers.Models
             // Return 0 if all entries are null
             return count ?? 0;
         }
-        public decimal GetTotal()
-        {
+
+        public decimal GetTotal() {
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count *
-                              cartItems.Appetizer.AppetizerPrice).Sum();
+                              cartItems.getItem().getPrice()).Sum();
             return total ?? decimal.Zero;
 
         }
-        public int CreateOrder(Order order)
-        {
+        public int CreateOrder(Order order) {
             decimal orderTotal = 0;
 
             var cartItems = GetCartItems();
@@ -158,18 +142,16 @@ namespace FantasyBurgers.Models
 
             // adding the order details for each
 
-            foreach (var item in cartItems)
-            {
-                var orderDetail = new OrderDetail
-                {
-                    AppetizersId = item.AppetizersId,
+            foreach (var item in cartItems) {
+                var orderDetail = new OrderDetail {
+                    PurchasableItemId = item.PurchasableItemId,
                     OrderId = order.OrderId,
-                    UnitPrice = item.Appetizer.AppetizerPrice,
+                    UnitPrice = item.getItem().getPrice(),
                     Quantity = item.Count
                 };
 
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Appetizer.AppetizerPrice);
+                orderTotal += (item.Count * item.getItem().getPrice());
 
                 storeDB.OrderDetails.Add(orderDetail);
             }
@@ -186,18 +168,13 @@ namespace FantasyBurgers.Models
             // Return the OrderId as the confirmation number
             return order.OrderId;
         }
-        
+
         // We're using HttpContextBase to allow access to cookies.
-        public string GetCartId(HttpContextBase context)
-        {
-            if (context.Session[CartSessionKey] == null)
-            {
-                if (!string.IsNullOrWhiteSpace(context.User.Identity.Name))
-                {
+        public string GetCartId(HttpContextBase context) {
+            if (context.Session[CartSessionKey] == null) {
+                if (!string.IsNullOrWhiteSpace(context.User.Identity.Name)) {
                     context.Session[CartSessionKey] = context.User.Identity.Name;
-                }
-                else
-                {
+                } else {
                     // Generate a new random GUID using System.Guid class
                     Guid tempCartId = Guid.NewGuid();
                     // Send tempCartId back to client as a cookie
@@ -209,12 +186,10 @@ namespace FantasyBurgers.Models
         // When a user has logged in, migrate their shopping cart to
 
         // be associated with their username
-        public void MigrateCart(string userName)
-        {
+        public void MigrateCart(string userName) {
             var shoppingCart = storeDB.Carts.Where(c => c.CartId == ShoppingCartId);
 
-            foreach (Cart item in shoppingCart)
-            {
+            foreach (Cart item in shoppingCart) {
                 item.CartId = userName;
             }
             storeDB.SaveChanges();
