@@ -7,7 +7,16 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FantasyBurgers.Models;
-
+/*<!--Author's name: Waynell Lovell,
+                   Thiago De Andrade Souza,
+                   Edward Song,
+                   Sahil Mahajan,
+                   Anmol .
+    Date Created: November 30th, 2016
+    Version	History: Part-1.Project Concept, Landing Page &	Site Security,
+                     Part-2.Main Functionality & Database Connectivity,
+                     Part-3.Finished Version – Fully Styled	and	Functional
+    File Description: Allows the user to acces the Burger model. -->*/
 namespace FantasyBurgers.Controllers
 {
     public class BurgersController : Controller
