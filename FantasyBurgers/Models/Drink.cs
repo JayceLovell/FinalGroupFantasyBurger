@@ -1,13 +1,11 @@
-namespace FantasyBurgers.Models
-{
+namespace FantasyBurgers.Models {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Drink
-    {
+    public partial class Drink : PurchasableItem {
         public int DrinkId { get; set; }
 
         [Required]
@@ -29,5 +27,17 @@ namespace FantasyBurgers.Models
 
         [Display(Name = "Display")]
         public string DrinkImage { get; set; }
+
+        public int getItemId() {
+            return DrinkId;
+        }
+
+        public decimal getPrice() {
+            return DrinkPrice;
+        }
+
+        public string getName() {
+            return DrinkName;
+        }
     }
 }

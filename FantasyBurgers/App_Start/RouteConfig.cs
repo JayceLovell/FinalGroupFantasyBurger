@@ -5,12 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FantasyBurgers
-{
-    public class RouteConfig
-    {
-        public static void RegisterRoutes(RouteCollection routes)
-        {
+namespace FantasyBurgers {
+    public class RouteConfig {
+        public static void RegisterRoutes(RouteCollection routes) {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -18,6 +15,11 @@ namespace FantasyBurgers
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "ShoppingCart",
+                url: "ShoppingCart/AddToCart/{itemType}/{itemId}",
+                defaults: new { controller = "ShoppingCart", action = "AddToCart", itemType = "", itemId = "" });
         }
     }
 }

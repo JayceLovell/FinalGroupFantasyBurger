@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppetizersController.cs" />
     <Compile Include="Controllers\BurgersController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\DrinksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Models\Appetizer.cs" />
     <Compile Include="Models\Burger.cs" />
     <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\PurchasableItem.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\FantasyBurgerContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -384,6 +386,9 @@
     <Content Include="Views\Sides\Edit.cshtml" />
     <Content Include="Views\Sides\Delete.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
