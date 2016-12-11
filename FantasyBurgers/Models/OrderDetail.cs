@@ -5,7 +5,16 @@ namespace FantasyBurgers.Models {
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Linq;
-
+    /*Author's name: Waynell Lovell,
+               Thiago De Andrade Souza,
+               Edward Song,
+               Sahil Mahajan,
+               Anmol .
+Date Created: November 30th, 2016
+Version History: Part-1.Project Concept, Landing Page &	Site Security,
+                 Part-2.Main Functionality & Database Connectivity,
+                 Part-3.Finished Version – Fully Styled and Functional
+File Description: Order Details.  */
     [Table("OrderDetail")]
     public partial class OrderDetail {
         public int OrderDetailId { get; set; }

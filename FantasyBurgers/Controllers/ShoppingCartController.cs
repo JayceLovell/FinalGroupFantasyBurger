@@ -6,7 +6,16 @@ using System.Web.Mvc;
 using FantasyBurgers.Models;
 using FantasyBurgers.ViewModels;
 using System.Diagnostics;
-
+/*<!--Author's name: Waynell Lovell,
+                   Thiago De Andrade Souza,
+                   Edward Song,
+                   Sahil Mahajan,
+                   Anmol .
+    Date Created: November 30th, 2016
+    Version	History: Part-1.Project Concept, Landing Page &	Site Security,
+                     Part-2.Main Functionality & Database Connectivity,
+                     Part-3.Finished Version – Fully Styled	and	Functional
+    File Description: Deals with the shopping cart. -->*/
 namespace FantasyBurgers.Controllers {
     public class ShoppingCartController : Controller {
         FantasyBurgerContext storeDB = new FantasyBurgerContext();

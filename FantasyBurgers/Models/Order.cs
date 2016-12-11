@@ -6,7 +6,16 @@ namespace FantasyBurgers.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    /*Author's name: Waynell Lovell,
+               Thiago De Andrade Souza,
+               Edward Song,
+               Sahil Mahajan,
+               Anmol .
+Date Created: November 30th, 2016
+Version History: Part-1.Project Concept, Landing Page &	Site Security,
+                 Part-2.Main Functionality & Database Connectivity,
+                 Part-3.Finished Version – Fully Styled and Functional
+File Description: Takes the cart information of the user, and carries it to the page, so they can order.  */
     [Table("Order")]
     public partial class Order
     {
