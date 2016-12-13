@@ -218,10 +218,7 @@
     <Content Include="Content\Images\Burger_Brand_Logo.jpg" />
     <Content Include="Content\Images\cercle1.png" />
     <Content Include="Content\Images\cercle3.png" />
-    <Content Include="Content\Images\CocoaOno.jpg" />
     <Content Include="Content\Images\CornOnTheCob.jpg" />
-    <Content Include="Content\Images\DefaultSidesImage.jpg" />
-    <Content Include="Content\Images\DrunkenDonuts.jpg" />
     <Content Include="Content\Images\enjoyBurger.jpg" />
     <Content Include="Content\Images\FantasyFries.jpg" />
     <Content Include="Content\Images\FunnelCakeFries.jpg" />
@@ -233,8 +230,6 @@
     <Content Include="Content\Images\Icons\bread_black.png" />
     <Content Include="Content\Images\Icons\bread_color.png" />
     <Content Include="Content\Images\Icons\burger_sandwich.png" />
-    <Content Include="Content\Images\DefaultBurgerImage.jpg" />
-    <Content Include="Content\Images\DefaultAppetizerImage.jpg" />
     <Content Include="Content\Images\HotChocolate.jpg" />
     <Content Include="Content\Images\IceTea.jpg" />
     <Content Include="Content\Images\Icons\aboutUs.png" />
