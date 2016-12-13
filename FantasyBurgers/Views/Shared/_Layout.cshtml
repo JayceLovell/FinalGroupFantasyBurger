@@ -58,9 +58,9 @@ Authors: Sahil & Waynell Lovell
                             <li role="separator" class="divider"></li>
                             <li>@Html.ActionLink("Burgers", "BrowseByCategory", "Menu",new {category = "Burger" },null)</li>
                             <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Drinks", "Index", "Drinks",new { category = "Drink" }, null)</li>
+                            <li>@Html.ActionLink("Drinks", "BrowseByCategory", "Menu", new { category = "Drink" }, null)</li>
                             <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Sides", "Index", "Sides",new { category = "Side" }, null)</li>
+                            <li>@Html.ActionLink("Sides", "BrowseByCategory", "Menu", new { category = "Side" }, null)</li>
                             @if (HttpContext.Current.User.IsInRole("Admin"))
                             {
                                 <li role="separator" class="divider"></li>
