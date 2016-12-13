@@ -9,42 +9,57 @@ namespace FantasyBurgers.Models
     [Table("Menu")]
     public partial class Menu
     {
+        public Menu()
+        {
 
+        }
+        
         /// <summary>
-        /// This constructor takes one argument title which sets the itle property to its value
+        /// This constructor takes one argument name which sets teh title property to its value
         /// </summary>
         /// <param name="title"></param>
         public Menu(string title)
         {
             this.Name = title;
         }
-        [Key]
-        public virtual int ItemId { get; set; }
 
-        //Category foreign key
-        public virtual int Categoryid { get; set; }
+        /*public Menu()
+        {
+            Carts = new HashSet<Cart>();
+            OrderDetails = new HashSet<OrderDetail>();
+        }*/
+
+        public int MenuId { get; set; }
+
+        public int Categoryid { get; set; }
         public virtual Category Category { get; set; }
 
         [Required]
         [StringLength(160)]
-        [Display(Name="Name")]
-        public virtual string Name { get; set; }
+        [Display(Name = "Name")]
+        public string Name { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name="Description")]
-        public virtual string ShortDescription { get; set; }
+        [Display(Name = "Description")]
+        public string ShortDescription { get; set; }
 
-        [Required]
-        [Display(Name="Detailed Description")]
-        public virtual string LongDescription { get; set; }
+        [Display(Name = "Detailed Description")]
+        public string LongDescription { get; set; }
 
         [Required]
         [Column(TypeName = "numeric")]
-        [Display(Name="Price")]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
 
-        [Display(Name="Display")]
+        [Display(Name = "Display")]
         public string Image { get; set; }
+        /*
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Carts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        */
     }
 }

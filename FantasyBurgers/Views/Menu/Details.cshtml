@@ -1,0 +1,27 @@
+﻿@model FantasyBurgers.Models.Menu
+
+@{
+    ViewBag.Title = "Detail - " + Model.Name;
+}
+<div style="margin-top:165px;">
+    <h1>Name: @Model.Name</h1>
+
+    <h2>Type: @Model.Category.Category1</h2>
+    <h2>Detailed Description: @Model.LongDescription</h2>
+    <h2>Price: @Model.Price</h2>
+    <h2>Display</h2>
+    <img alt="Image of item" class="detailsimages img-rounded" src="@Url.Content(Model.Image)" />
+    <p>
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart",new { id = Model.MenuId },new { @class="btn btn-success btn-lg"})
+        @if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId }, new { @class = "btn btn-warning btn-lg" })
+           
+            @Html.ActionLink("Back to List", "Admin", null, new { @class = "btn btn-primary btn-lg" })
+        }
+        else
+        {
+            @Html.ActionLink("Back to List", "BrowseByCategory", new { category = Model.Category.Category1 }, new { @class = "btn btn-info btn-lg" })
+        }
+    </p>
+</div>
