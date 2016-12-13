@@ -1,0 +1,29 @@
+﻿@using FantasyBurgers.Models;
+@model Category
+
+@{
+    ViewBag.Title = "Browse By "+ Model.Category1;
+}
+
+<div style="margin-top:165px;">
+    <h2> Browsing Category: @Model.Category1</h2>
+    <table class="table">
+        @foreach (var item in Model.Menus)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.MenuId }, new { @class = "btn btn-success btn-lg" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

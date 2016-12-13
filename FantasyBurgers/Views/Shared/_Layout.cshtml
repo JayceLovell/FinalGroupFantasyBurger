@@ -54,14 +54,18 @@ Authors: Sahil & Waynell Lovell
                             Menu<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Appetizers", "Index", "Appetizers")</li>
+                            <li>@Html.ActionLink("Appetizer", "BrowseByCategory", "Menu")</li>
                             <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Burgers", "Index", "Burgers")</li>
+                            <li>@Html.ActionLink("Burgers", "BrowseByCategory", "Menu",new {category = "Burger" },null)</li>
                             <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Drinks", "Index", "Drinks")</li>
+                            <li>@Html.ActionLink("Drinks", "Index", "Drinks",new { category = "Drink" }, null)</li>
                             <li role="separator" class="divider"></li>
-                            <li>@Html.ActionLink("Sides", "Index", "Sides")</li>
-
+                            <li>@Html.ActionLink("Sides", "Index", "Sides",new { category = "Side" }, null)</li>
+                            @if (HttpContext.Current.User.IsInRole("Admin"))
+                            {
+                                <li role="separator" class="divider"></li>
+                                <li>@Html.ActionLink("Admins", "Index", "ManageMenu")</li>
+                            }
                         </ul>
                     </li>
                     <li>@Html.Partial("_LoginPartial")</li>
