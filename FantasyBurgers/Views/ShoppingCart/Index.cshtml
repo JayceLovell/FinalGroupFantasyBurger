@@ -2,23 +2,23 @@
 @{
     ViewBag.Title = "Shopping Cart";
 }
-<div style="margin-top:165px;">
+<div style="margin-top:165px;" class="col-md-offset-1">
     <h3>
         <em>Review</em> your cart:
     </h3>
     <p>
-        @Html.ActionLink("Checkout>> ", "AddressAndPayment", "Checkout")
+        @Html.ActionLink("Checkout ", "AddressAndPayment", "Checkout")
     </p>
     <div id="update-message"></div>
     <table>
         <tr>
-            <th>
+            <th class="col-md-2">
                 Name
             </th>
-            <th>
+            <th class="col-md-2">
                 Price
             </th>
-            <th>
+            <th class="col-md-2" style="text-align:center">
                 Quantity
             </th>
             <th></th>
@@ -26,17 +26,17 @@
         @foreach (var item in Model.CartItems)
         {
             <tr id="row-@item.RecordId">
-                <td>
+                <td class="col-md-2">
                     @Html.ActionLink(item.Menu.Name, "Details", "Menu", new { id = item.MenuId }, null)
                 </td>
-                <td>
+                <td class="col-md-2">
                     @item.Menu.Price
                 </td>
-                <td id="item-count-@item.RecordId">
+                <td id="item-count-@item.RecordId" class="col-md-1" style="text-align:center">
                     @item.Count
                 </td>
                 <td>
-                    <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
+                    <a href="#" class="RemoveLink" data-id="@item.RecordId"><i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i>Remove from cart</a>
                 </td>
             </tr>
         }

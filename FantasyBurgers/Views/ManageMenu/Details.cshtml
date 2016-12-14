@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Detail's of "+Model.Name;
 }
-<div style="margin-top: 165px">
+<div style="margin-top: 165px" class="col-md-offset-2">
     <div>
         <h4>
             Detail's of @Model.Name
@@ -43,8 +43,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId },new { @class = "btn btn-warning btn-sm" }) |
-        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart",new { id = Model.MenuId },new { @class="btn btn-info btn-lg"}) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId },new { @class = "btn btn-warning btn-lg" })
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart",new { id = Model.MenuId },new { @class="btn btn-info btn-lg"})
         @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-primary btn-lg" })
     </p>
 </div>
