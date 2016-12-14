@@ -3,8 +3,8 @@
 @{
     ViewBag.Title = "Create Item";
 }
-<div style="margin-top: 165px">
-    <h2>Create Item</h2>
+<div style="margin-top: 165px" class="col-md-offset-2">
+    <h2>Create Item <i class="fa fa-plus fa-lg" aria-hidden="true"></i></h2>
 
     @using (Html.BeginForm())
     {
@@ -64,14 +64,14 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-success" />
+                    <input type="submit" value="Create" class="btn btn-success btn-lg" />
                 </div>
             </div>
         </div>
     }
 
     <div>
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
     </div>
 </div>
     @section Scripts {
