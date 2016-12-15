@@ -1,66 +1,50 @@
 ﻿@model FantasyBurgers.Models.Menu
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detail's of " + Model.Name;
 }
+<div style="margin-top: 165px" class="col-md-offset-2">
+    <div>
+        <h4>
+            Detail's of @Model.Name
+        </h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dd>
+                @Html.DisplayFor(model => model.Category.Category1)
+            </dd>
 
-<h2>Details</h2>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-<div>
-    <h4>Menu</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Category1)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.Category1)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LongDescription)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LongDescription)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ShortDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ShortDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LongDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LongDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dd>
+                <img class="detailsimages img-rounded" src="@Url.Content(Model.Image)" />
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId }, new { @class = "btn btn-warning btn-lg" })
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.MenuId }, new { @class = "btn btn-info btn-lg" })
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-lg" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
