@@ -355,15 +355,20 @@
     <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Menu\Details.cshtml" />
     <Content Include="Views\Menu\BrowseByCategory.cshtml" />
+    <Content Include="Views\TestManageMenu\Create.cshtml" />
+    <Content Include="Views\TestManageMenu\Delete.cshtml" />
+    <Content Include="Views\TestManageMenu\Details.cshtml" />
+    <Content Include="Views\TestManageMenu\Edit.cshtml" />
+    <Content Include="Views\TestManageMenu\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\Checkout\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
     <Content Include="Views\ManageMenu\Create.cshtml" />
     <Content Include="Views\ManageMenu\Delete.cshtml" />
     <Content Include="Views\ManageMenu\Details.cshtml" />
     <Content Include="Views\ManageMenu\Edit.cshtml" />
     <Content Include="Views\ManageMenu\Index.cshtml" />
-    <Content Include="Views\ShoppingCart\Index.cshtml" />
-    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
-    <Content Include="Views\Checkout\Complete.cshtml" />
-    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
