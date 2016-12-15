@@ -12,7 +12,7 @@ namespace FantasyBurgers.Controllers
     {
         private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
-       // Get: MenuBrowse?Cetgory
+       // Get: MenuBrowse?Category
        public ActionResult BrowseByCategory(string category)
         {
             if (category==null)
@@ -25,7 +25,7 @@ namespace FantasyBurgers.Controllers
             return View(categoryModel);
         }
 
-        // Get: Store/Details/
+        // Get: Menu/Details/
         public ActionResult Details(int? id=1)
         {
             Menu menu = db.Menus.Find(id);

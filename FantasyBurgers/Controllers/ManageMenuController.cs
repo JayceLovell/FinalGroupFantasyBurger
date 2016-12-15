@@ -10,19 +10,19 @@ using FantasyBurgers.Models;
 
 namespace FantasyBurgers.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     public class ManageMenuController : Controller
     {
         private FantasyBurgersFinalContext db = new FantasyBurgersFinalContext();
 
-        // GET: MangeMenu
+        // GET: ManageMenu
         public ActionResult Index()
         {
             var menus = db.Menus.Include(m => m.Category);
             return View(menus.ToList());
         }
 
-        // GET: MangeMenu/Details/5
+        // GET: ManageMenu/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,19 +37,19 @@ namespace FantasyBurgers.Controllers
             return View(menu);
         }
 
-        // GET: MangeMenu/Create
+        // GET: ManageMenu/Create
         public ActionResult Create()
         {
             ViewBag.Categoryid = new SelectList(db.Categories, "Categoryid", "Category1");
             return View();
         }
 
-        // POST: MangeMenu/Create
+        // POST: ManageMenu/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ItemId,Categoryid,Name,ShortDescription,LongDescription,Price,Image")] Menu menu)
+        public ActionResult Create([Bind(Include = "MenuId,Categoryid,Name,ShortDescription,LongDescription,Price,Image")] Menu menu)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +62,7 @@ namespace FantasyBurgers.Controllers
             return View(menu);
         }
 
-        // GET: MangeMenu/Edit/5
+        // GET: ManageMenu/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,12 +78,12 @@ namespace FantasyBurgers.Controllers
             return View(menu);
         }
 
-        // POST: MangeMenu/Edit/5
+        // POST: ManageMenu/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemId,Categoryid,Name,ShortDescription,LongDescription,Price,Image")] Menu menu)
+        public ActionResult Edit([Bind(Include = "MenuId,Categoryid,Name,ShortDescription,LongDescription,Price,Image")] Menu menu)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace FantasyBurgers.Controllers
             return View(menu);
         }
 
-        // GET: MangeMenu/Delete/5
+        // GET: ManageMenu/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,7 +110,7 @@ namespace FantasyBurgers.Controllers
             return View(menu);
         }
 
-        // POST: MangeMenu/Delete/5
+        // POST: ManageMenu/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
