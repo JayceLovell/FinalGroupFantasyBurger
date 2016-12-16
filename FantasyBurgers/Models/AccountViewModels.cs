@@ -1,6 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+/*
+ * This class represents the model of account
+ * Filename: AccountViewModels.cs
+ * Modified date: 12/16/2016
+ * Authors:
+ *      - Eddie Song
+ *      - Waynnel Lovelll
+ *      - Thiago de Andrade
+ */
 namespace FantasyBurgers.Models
 {
     public class ExternalLoginConfirmationViewModel

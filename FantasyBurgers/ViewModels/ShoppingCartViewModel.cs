@@ -5,6 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * This class represents the model of an item being listed
+ * Filename: ShoppingCartViewModel.cs
+ * Modified date: 12/16/2016
+ * Authors:
+ *		- Eddie Song
+ *		- Waynnel Lovelll
+ *		- Thiago de Andrade
+ */
 namespace FantasyBurgers.ViewModels
 {
         public class ShoppingCartViewModel
