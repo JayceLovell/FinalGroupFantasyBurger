@@ -3,6 +3,15 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
+/*
+ * This class represents the manage view
+ * Filename: ManageViewModels.cs
+ * Modified date: 12/16/2016
+ * Authors:
+ *      - Eddie Song
+ *      - Waynnel Lovelll
+ *      - Thiago de Andrade
+ */
 namespace FantasyBurgers.Models
 {
     public class IndexViewModel

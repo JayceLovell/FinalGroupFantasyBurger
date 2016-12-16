@@ -4,6 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+/*
+ * This class represents the model of shopping cart
+ * Filename: ShoppingCart.cs
+ * Modified date: 12/16/2016
+ * Authors:
+ *      - Eddie Song
+ *      - Waynnel Lovelll
+ *      - Thiago de Andrade
+ */
+
 namespace FantasyBurgers.Models
 {
     public class ShoppingCart

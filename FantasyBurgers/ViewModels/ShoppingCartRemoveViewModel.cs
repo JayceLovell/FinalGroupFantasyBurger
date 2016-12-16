@@ -4,6 +4,15 @@ using System.Linq;
 using System.Web;
 using FantasyBurgers.Models;
 
+/*
+ * This class represents the model of an item being deleted
+ * Filename: ShoppingCartRemoveViewModel.cs
+ * Modified date: 12/16/2016
+ * Authors:
+ *		- Eddie Song
+ *		- Waynnel Lovelll
+ *		- Thiago de Andrade
+ */
 namespace FantasyBurgers.ViewModels
 {
     public class ShoppingCartRemoveViewModel
