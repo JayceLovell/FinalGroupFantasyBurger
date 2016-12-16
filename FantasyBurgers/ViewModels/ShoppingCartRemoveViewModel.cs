@@ -8,6 +8,7 @@ using FantasyBurgers.Models;
  * This class represents the model of an item being deleted
  * Filename: ShoppingCartRemoveViewModel.cs
  * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
  * Authors:
  *		- Eddie Song
  *		- Waynnel Lovelll

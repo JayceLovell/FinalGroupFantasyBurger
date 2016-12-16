@@ -2,10 +2,13 @@
  * This class represents the db context of our solution
  * Filename: FantasyBurgersFinalContext.cs
  * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
  * Authors:
  *      - Eddie Song
  *      - Waynnel Lovelll
  *      - Thiago de Andrade
+ *      - Sahil Mahajan
+ *      - Anmol Sharma
  */
 namespace FantasyBurgers.Models
 {

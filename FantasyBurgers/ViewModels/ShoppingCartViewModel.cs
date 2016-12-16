@@ -9,6 +9,7 @@ using System.Threading.Tasks;
  * This class represents the model of an item being listed
  * Filename: ShoppingCartViewModel.cs
  * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
  * Authors:
  *		- Eddie Song
  *		- Waynnel Lovelll
