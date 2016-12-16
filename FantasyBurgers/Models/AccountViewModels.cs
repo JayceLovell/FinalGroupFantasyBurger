@@ -5,10 +5,13 @@ using System.ComponentModel.DataAnnotations;
  * This class represents the model of account
  * Filename: AccountViewModels.cs
  * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
  * Authors:
  *      - Eddie Song
  *      - Waynnel Lovelll
  *      - Thiago de Andrade
+ *      - Sahil Mahajan
+ *      - Anmol Sharma
  */
 namespace FantasyBurgers.Models
 {

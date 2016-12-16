@@ -7,10 +7,13 @@ using Microsoft.Owin.Security;
  * This class represents the manage view
  * Filename: ManageViewModels.cs
  * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
  * Authors:
  *      - Eddie Song
  *      - Waynnel Lovelll
  *      - Thiago de Andrade
+ *      - Sahil Mahajan
+ *      - Anmol Sharma
  */
 namespace FantasyBurgers.Models
 {
