@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * This class represents the manage menu controller
+ * Filename: ManageMenuController.cs
+ * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
+ * Authors:
+ *      - Eddie Song
+ *      - Waynnel Lovelll
+ *      - Thiago de Andrade
+ *      - Sahil Mahajan
+ *      - Anmol Sharma
+ */
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;

@@ -1,4 +1,16 @@
-﻿using FantasyBurgers.Models;
+﻿/*
+ * This class represents the checkout controller
+ * Filename: CheckoutController.cs
+ * Modified date: 12/16/2016
+ * Website: fantasyburgers.azurewebsites.net
+ * Authors:
+ *      - Eddie Song
+ *      - Waynnel Lovelll
+ *      - Thiago de Andrade
+ *      - Sahil Mahajan
+ *      - Anmol Sharma
+ */
+using FantasyBurgers.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
