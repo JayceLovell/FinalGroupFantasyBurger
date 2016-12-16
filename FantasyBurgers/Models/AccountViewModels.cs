@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
  * This class represents the model of account
  * Filename: AccountViewModels.cs
  * Modified date: 12/16/2016
- * Website: fantasyburgers.azurewebsites.net
+ * Website: http://comp229-fantasy-burgers.azurewebsites.net/
  * Authors:
  *      - Eddie Song
  *      - Waynnel Lovelll
